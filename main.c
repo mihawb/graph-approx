@@ -87,8 +87,7 @@ main (int argc, char **argv)
     }
 
     if (read_pts_failed (inf, &pts)) {
-      fprintf (stderr, "%s: bad contents of points file: %s\n\n", argv[0],
-               inp);
+      fprintf (stderr, "%s: bad contents of points file: %s\n\n", argv[0], inp);
       exit (EXIT_FAILURE);
     }
     else
