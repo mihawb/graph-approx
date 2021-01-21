@@ -38,11 +38,15 @@ double d2fi(int n, double x)
     return (y2 - y1) / (x2 - x1);
 }
 
-/*Trzecia Pochodna - Brakuje*/
+/*Trzecia Pochodna - v1.1*/
 double d3fi(int n, double x)
 {
-
-
+    double delta = 1.0e-6;
+    double x1 = x - delta;
+    double x2 = x + delta;
+    double y1 = d2fi(n,x1);
+    double y2 = d2fi(n,x2);
+    return (y2 - y1) / (x2 - x1);
 }
 
 
@@ -92,7 +96,7 @@ void make_spl(points_t * pts, spline_t * spl)
 				spl->f[i]  += ck * fi  (k, xx);
 				spl->f1[i] += ck * dfi (k, xx);
 				spl->f2[i] += ck * d2fi(k, xx);
-				spl->f3[i] += ck * d2fi(k, xx); /*Podmienic na 3 pochodną*/
+				spl->f3[i] += ck * d3fi(k, xx);
 
 			}
 		}

@@ -5,7 +5,10 @@
 
 double fun( double x ) {
 				double r= ((double)rand() - RAND_MAX/2.0)/RAND_MAX/5; // +-10%
-				return (1+r)*(10*x*x*x*x+5*x*x*x+x*x);
+                return (1+r)*(x*x+3*x+4); // x^2+3x+4
+                // return (1+r)*(x*x*x+x*x+x+1); // x^3+x^2+x+1
+                // return (1+r)*(4*x*x*x*x+x*x*x+3*x*x+1); // 4x^4+x^3+3x^2+1
+				// return (1+r)*(10*x*x*x*x+5*x*x*x+x*x); // 5x^5+10x^4
 }
 
 int main( int argc, char **argv ) {
